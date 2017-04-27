@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		062272D11EB2792100E7AB7E /* MyMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 062272D01EB2792100E7AB7E /* MyMapStyle.json */; };
 		063FD4581EB256210083D7A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FD4571EB256210083D7A8 /* AppDelegate.swift */; };
-		063FD45A1EB256210083D7A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FD4591EB256210083D7A8 /* ViewController.swift */; };
 		063FD45D1EB256210083D7A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063FD45B1EB256210083D7A8 /* Main.storyboard */; };
 		063FD4601EB256210083D7A8 /* Lazesnor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 063FD45E1EB256210083D7A8 /* Lazesnor.xcdatamodeld */; };
 		063FD4621EB256210083D7A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 063FD4611EB256210083D7A8 /* Assets.xcassets */; };
 		063FD4651EB256210083D7A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063FD4631EB256210083D7A8 /* LaunchScreen.storyboard */; };
 		063FD4701EB256220083D7A8 /* LazesnorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FD46F1EB256220083D7A8 /* LazesnorTests.swift */; };
+		063FD47E1EB262D10083D7A8 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FD47D1EB262D10083D7A8 /* MainMapViewController.swift */; };
 		1159A2B6A71A8478C90838A0 /* Pods_LazesnorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4370251685A324140434EB /* Pods_LazesnorTests.framework */; };
 		2AE92CF379C8F5C64BB4ABE5 /* Pods_Lazesnor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF109680E75C7B022AF8768 /* Pods_Lazesnor.framework */; };
 /* End PBXBuildFile section */
@@ -29,9 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		062272D01EB2792100E7AB7E /* MyMapStyle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MyMapStyle.json; path = "Support Files/MyMapStyle.json"; sourceTree = "<group>"; };
 		063FD4541EB256210083D7A8 /* Lazesnor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lazesnor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		063FD4571EB256210083D7A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		063FD4591EB256210083D7A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		063FD45C1EB256210083D7A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		063FD45F1EB256210083D7A8 /* Lazesnor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lazesnor.xcdatamodel; sourceTree = "<group>"; };
 		063FD4611EB256210083D7A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +41,7 @@
 		063FD46B1EB256220083D7A8 /* LazesnorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazesnorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		063FD46F1EB256220083D7A8 /* LazesnorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazesnorTests.swift; sourceTree = "<group>"; };
 		063FD4711EB256220083D7A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		063FD47D1EB262D10083D7A8 /* MainMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainMapViewController.swift; path = Controllers/MainMapViewController.swift; sourceTree = "<group>"; };
 		141D78D836428743A3598DC1 /* Pods-LazesnorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazesnorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazesnorTests/Pods-LazesnorTests.release.xcconfig"; sourceTree = "<group>"; };
 		6AF109680E75C7B022AF8768 /* Pods_Lazesnor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lazesnor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4370251685A324140434EB /* Pods_LazesnorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazesnorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		062272CF1EB278B700E7AB7E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				062272D01EB2792100E7AB7E /* MyMapStyle.json */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
 		063FD44B1EB256210083D7A8 = {
 			isa = PBXGroup;
 			children = (
@@ -92,12 +102,11 @@
 			isa = PBXGroup;
 			children = (
 				063FD4571EB256210083D7A8 /* AppDelegate.swift */,
-				063FD4591EB256210083D7A8 /* ViewController.swift */,
-				063FD45B1EB256210083D7A8 /* Main.storyboard */,
-				063FD4611EB256210083D7A8 /* Assets.xcassets */,
-				063FD4631EB256210083D7A8 /* LaunchScreen.storyboard */,
-				063FD4661EB256210083D7A8 /* Info.plist */,
-				063FD45E1EB256210083D7A8 /* Lazesnor.xcdatamodeld */,
+				063FD47A1EB2622D0083D7A8 /* Models */,
+				063FD47C1EB262730083D7A8 /* Views */,
+				063FD47B1EB262620083D7A8 /* Controllers */,
+				062272CF1EB278B700E7AB7E /* Support Files */,
+				063FD47F1EB263340083D7A8 /* Utilities */,
 			);
 			path = Lazesnor;
 			sourceTree = "<group>";
@@ -109,6 +118,40 @@
 				063FD4711EB256220083D7A8 /* Info.plist */,
 			);
 			path = LazesnorTests;
+			sourceTree = "<group>";
+		};
+		063FD47A1EB2622D0083D7A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		063FD47B1EB262620083D7A8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				063FD47D1EB262D10083D7A8 /* MainMapViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		063FD47C1EB262730083D7A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		063FD47F1EB263340083D7A8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				063FD45B1EB256210083D7A8 /* Main.storyboard */,
+				063FD4611EB256210083D7A8 /* Assets.xcassets */,
+				063FD4631EB256210083D7A8 /* LaunchScreen.storyboard */,
+				063FD4661EB256210083D7A8 /* Info.plist */,
+				063FD45E1EB256210083D7A8 /* Lazesnor.xcdatamodeld */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		72D560271B3737DEE152B060 /* Pods */ = {
@@ -222,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				062272D11EB2792100E7AB7E /* MyMapStyle.json in Resources */,
 				063FD4651EB256210083D7A8 /* LaunchScreen.storyboard in Resources */,
 				063FD4621EB256210083D7A8 /* Assets.xcassets in Resources */,
 				063FD45D1EB256210083D7A8 /* Main.storyboard in Resources */,
@@ -335,8 +379,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				063FD47E1EB262D10083D7A8 /* MainMapViewController.swift in Sources */,
 				063FD4601EB256210083D7A8 /* Lazesnor.xcdatamodeld in Sources */,
-				063FD45A1EB256210083D7A8 /* ViewController.swift in Sources */,
 				063FD4581EB256210083D7A8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +595,7 @@
 				063FD4761EB256220083D7A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		063FD4771EB256220083D7A8 /* Build configuration list for PBXNativeTarget "LazesnorTests" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +604,7 @@
 				063FD4791EB256220083D7A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
