@@ -1,3 +1,3 @@
 # Lazesnor
 
-Location base alarm.
+Location-based alarm.
