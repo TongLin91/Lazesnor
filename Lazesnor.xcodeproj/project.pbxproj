@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		062272D11EB2792100E7AB7E /* MyMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 062272D01EB2792100E7AB7E /* MyMapStyle.json */; };
+		062272D31EB2971800E7AB7E /* CentralParkRun.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 062272D21EB2971800E7AB7E /* CentralParkRun.gpx */; };
 		063FD4581EB256210083D7A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FD4571EB256210083D7A8 /* AppDelegate.swift */; };
 		063FD45D1EB256210083D7A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063FD45B1EB256210083D7A8 /* Main.storyboard */; };
 		063FD4601EB256210083D7A8 /* Lazesnor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 063FD45E1EB256210083D7A8 /* Lazesnor.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		062272D01EB2792100E7AB7E /* MyMapStyle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MyMapStyle.json; path = "Support Files/MyMapStyle.json"; sourceTree = "<group>"; };
+		062272D21EB2971800E7AB7E /* CentralParkRun.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CentralParkRun.gpx; sourceTree = "<group>"; };
 		063FD4541EB256210083D7A8 /* Lazesnor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lazesnor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		063FD4571EB256210083D7A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		063FD45C1EB256210083D7A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				063FD45B1EB256210083D7A8 /* Main.storyboard */,
+				062272D21EB2971800E7AB7E /* CentralParkRun.gpx */,
 				063FD4611EB256210083D7A8 /* Assets.xcassets */,
 				063FD4631EB256210083D7A8 /* LaunchScreen.storyboard */,
 				063FD4661EB256210083D7A8 /* Info.plist */,
@@ -265,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				062272D31EB2971800E7AB7E /* CentralParkRun.gpx in Resources */,
 				062272D11EB2792100E7AB7E /* MyMapStyle.json in Resources */,
 				063FD4651EB256210083D7A8 /* LaunchScreen.storyboard in Resources */,
 				063FD4621EB256210083D7A8 /* Assets.xcassets in Resources */,
