@@ -11,12 +11,16 @@ import GoogleMaps
 
 class MainMapViewController: UIViewController {
 
+    var apiRequestManager: APIRequestManager?
+    
     var locationManager: CLLocationManager!
     var isUserInteracting = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .red
         self.edgesForExtendedLayout = UIRectEdge(rawValue: 0)
+        self.apiRequestManager = APIRequestManager()
         
         setupLocationManager()
         setUpViewHierarchy()
@@ -134,6 +138,7 @@ extension MainMapViewController: CLLocationManagerDelegate{
         guard let currentLocation = locations.last, !isUserInteracting else { return }
         
         mainMap.animate(toLocation: currentLocation.coordinate)
+        mainMap.animate(toZoom: 15)
     }
 }
 
