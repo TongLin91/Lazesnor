@@ -6,8 +6,9 @@ target 'Lazesnor' do
   use_frameworks!
 
   # Pods for Lazesnor
-  pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps'
   
   target 'LazesnorTests' do
     inherit! :search_paths

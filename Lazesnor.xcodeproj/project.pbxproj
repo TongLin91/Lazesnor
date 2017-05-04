@@ -18,6 +18,8 @@
 		063FD4651EB256210083D7A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063FD4631EB256210083D7A8 /* LaunchScreen.storyboard */; };
 		063FD4701EB256220083D7A8 /* LazesnorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FD46F1EB256220083D7A8 /* LazesnorTests.swift */; };
 		063FD47E1EB262D10083D7A8 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FD47D1EB262D10083D7A8 /* MainMapViewController.swift */; };
+		06E193E11EBB7B67009A1426 /* AddressSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E193E01EBB7B67009A1426 /* AddressSelectionViewController.swift */; };
+		06E193E31EBBB448009A1426 /* TransitRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E193E21EBBB448009A1426 /* TransitRoute.swift */; };
 		1159A2B6A71A8478C90838A0 /* Pods_LazesnorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4370251685A324140434EB /* Pods_LazesnorTests.framework */; };
 		2AE92CF379C8F5C64BB4ABE5 /* Pods_Lazesnor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF109680E75C7B022AF8768 /* Pods_Lazesnor.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,8 @@
 		063FD46F1EB256220083D7A8 /* LazesnorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazesnorTests.swift; sourceTree = "<group>"; };
 		063FD4711EB256220083D7A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		063FD47D1EB262D10083D7A8 /* MainMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainMapViewController.swift; path = Controllers/MainMapViewController.swift; sourceTree = "<group>"; };
+		06E193E01EBB7B67009A1426 /* AddressSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressSelectionViewController.swift; path = Controllers/AddressSelectionViewController.swift; sourceTree = "<group>"; };
+		06E193E21EBBB448009A1426 /* TransitRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitRoute.swift; path = Models/TransitRoute.swift; sourceTree = "<group>"; };
 		141D78D836428743A3598DC1 /* Pods-LazesnorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazesnorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazesnorTests/Pods-LazesnorTests.release.xcconfig"; sourceTree = "<group>"; };
 		6AF109680E75C7B022AF8768 /* Pods_Lazesnor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lazesnor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4370251685A324140434EB /* Pods_LazesnorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazesnorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +143,7 @@
 		063FD47A1EB2622D0083D7A8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				06E193E21EBBB448009A1426 /* TransitRoute.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 		063FD47B1EB262620083D7A8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				06E193E01EBB7B67009A1426 /* AddressSelectionViewController.swift */,
 				063FD47D1EB262D10083D7A8 /* MainMapViewController.swift */,
 			);
 			name = Controllers;
@@ -399,6 +405,8 @@
 			files = (
 				063FD47E1EB262D10083D7A8 /* MainMapViewController.swift in Sources */,
 				062272DA1EB7F83100E7AB7E /* Serializer.swift in Sources */,
+				06E193E31EBBB448009A1426 /* TransitRoute.swift in Sources */,
+				06E193E11EBB7B67009A1426 /* AddressSelectionViewController.swift in Sources */,
 				062272D81EB7F81500E7AB7E /* APIRequestManager.swift in Sources */,
 				063FD4601EB256210083D7A8 /* Lazesnor.xcdatamodeld in Sources */,
 				063FD4581EB256210083D7A8 /* AppDelegate.swift in Sources */,
