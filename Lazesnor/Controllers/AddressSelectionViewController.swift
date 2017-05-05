@@ -52,9 +52,9 @@ class AddressSelectionViewController: UIViewController {
     func getDirectionsURL(origin: String, destination: String) -> URL?{
         // create URL using NSURLComponents
         var urlComponents = URLComponents()
-        urlComponents.scheme = "https";
-        urlComponents.host = "maps.googleapis.com";
-        urlComponents.path = "/maps/api/directions/json?";
+        urlComponents.scheme = "https"
+        urlComponents.host = "maps.googleapis.com"
+        urlComponents.path = "/maps/api/directions/json"
         
         // add params
         let originQuery = URLQueryItem(name: "origin", value: origin)
@@ -133,7 +133,10 @@ extension AddressSelectionViewController: GMSAutocompleteResultsViewControllerDe
             apiRequestManager.request(endPoint: validAPI, completion: { (data: Data?) in
                 if let validData = data{
                     // Parsing routes
-                    dump(validData)
+                    
+                    mapView.direction = Direction(validData)
+                    dump(mapView.direction)
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
                         self.navigationController?.pushViewController(mapView, animated: true)
                     })

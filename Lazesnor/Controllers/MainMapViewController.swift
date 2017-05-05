@@ -11,6 +11,8 @@ import GoogleMaps
 
 class MainMapViewController: UIViewController {
     
+    var direction: Direction?
+    
     var locationManager: CLLocationManager?
     var isUserInteracting = false
     

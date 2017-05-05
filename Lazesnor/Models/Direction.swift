@@ -31,13 +31,14 @@ class Direction {
                     return nil
             }
             
-            guard let routes = dict["routes"] as? [[String: Any]] else { return nil }
+            guard let routeDict = dict["routes"] as? [[String: Any]] else {
+                self.init(originPlaceID: origin, destinationPlaceID: destination, routes: [])
+                return
+            }
             
-            routes.forEach({ (route: [String : Any]) in
-                
-            })
+            let routes = routeDict.map{ Route($0) }
             
-            self.init(originPlaceID: origin, destinationPlaceID: destination, routes: [])
+            self.init(originPlaceID: origin, destinationPlaceID: destination, routes: routes)
             return
         } catch {
             print("error parsing directio data")
