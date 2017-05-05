@@ -1,5 +1,5 @@
 //
-//  TransitRoute.swift
+//  Route.swift
 //  Lazesnor
 //
 //  Created by Tong Lin on 5/4/17.
@@ -8,8 +8,14 @@
 
 import Foundation
 
-class TransitRoute {
+class Route {
+    
+    
     init() {
         
+    }
+    
+    convenience init(_ dict: [String: Any]) {
+        self.init()
     }
 }

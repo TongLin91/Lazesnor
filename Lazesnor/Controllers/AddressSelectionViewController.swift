@@ -14,6 +14,8 @@ class AddressSelectionViewController: UIViewController {
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     
+    var apiRequestManager = APIRequestManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,6 +47,25 @@ class AddressSelectionViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func getDirectionsURL(origin: String, destination: String) -> URL?{
+        // create URL using NSURLComponents
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https";
+        urlComponents.host = "maps.googleapis.com";
+        urlComponents.path = "/maps/api/directions/json?";
+        
+        // add params
+        let originQuery = URLQueryItem(name: "origin", value: origin)
+        let destinationQuery = URLQueryItem(name: "destination", value: destination)
+        let modeQuery = URLQueryItem(name: "mode", value: "transit")
+        let alternativesQuery = URLQueryItem(name: "alternatives", value: "true")
+        let apiKeyQuery = URLQueryItem(name: "key", value: "AIzaSyC5PPvciXYm4F0Pvgz9--uPZncuZcM8vTo")
+        urlComponents.queryItems = [originQuery, destinationQuery, modeQuery, alternativesQuery, apiKeyQuery]
+        
+        print(urlComponents.url ?? "not valid url")
+        return urlComponents.url
     }
     
     func setUpViewHierarchy(){
@@ -90,10 +111,35 @@ extension AddressSelectionViewController: GMSAutocompleteResultsViewControllerDe
         print("Place name: \(place.name)")
         print("Place address: \(place.coordinate)")
         
-        // Pass end coordinate to map view
         let mapView = MainMapViewController()
-        mapView.destinationCoor = place.coordinate
-        self.navigationController?.present(mapView, animated: true, completion: nil)
+        let manager = CLLocationManager()
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.distanceFilter = 50
+        manager.requestAlwaysAuthorization()
+        manager.startUpdatingLocation()
+        manager.delegate = mapView
+        mapView.locationManager = manager
+        
+        let origin: String
+        let destination = "\(place.coordinate.latitude),\(place.coordinate.longitude)"
+        if let currentCoor = manager.location{
+            origin = "\(currentCoor.coordinate.latitude),\(currentCoor.coordinate.longitude)"
+        }else{
+            print("no wifi connectivities")
+            return
+        }
+        
+        if let validAPI = getDirectionsURL(origin: origin, destination: destination){
+            apiRequestManager.request(endPoint: validAPI, completion: { (data: Data?) in
+                if let validData = data{
+                    // Parsing routes
+                    dump(validData)
+                    DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
+                        self.navigationController?.pushViewController(mapView, animated: true)
+                    })
+                }
+            })
+        }
     }
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
