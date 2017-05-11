@@ -16,14 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyC5PPvciXYm4F0Pvgz9--uPZncuZcM8vTo")
         GMSPlacesClient.provideAPIKey("AIzaSyC5PPvciXYm4F0Pvgz9--uPZncuZcM8vTo")
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = UINavigationController(rootViewController: AddressSelectionViewController())
+        self.window?.rootViewController = AddressSelectionViewController()
         self.window?.makeKeyAndVisible()
+        
+        // Set status background color to gray
+        UIApplication.shared.statusBarStyle = .lightContent
+        UINavigationBar.appearance().clipsToBounds = true
+        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+        statusBar.backgroundColor = .gray
         
         return true
     }

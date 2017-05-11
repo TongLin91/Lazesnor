@@ -41,7 +41,7 @@ class Direction {
             self.init(originPlaceID: origin, destinationPlaceID: destination, routes: routes)
             return
         } catch {
-            print("error parsing directio data")
+            print("error parsing direction data")
         }
         
         return nil

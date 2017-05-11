@@ -21,6 +21,7 @@
 		06C848BE1EBC3C760066A8A0 /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C848BC1EBC3C760066A8A0 /* APIRequestManager.swift */; };
 		06C848BF1EBC3C760066A8A0 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C848BD1EBC3C760066A8A0 /* Serializer.swift */; };
 		06C848C11EBC446F0066A8A0 /* Bounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C848C01EBC446F0066A8A0 /* Bounds.swift */; };
+		06C848C31EBC4FFE0066A8A0 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C848C21EBC4FFE0066A8A0 /* Step.swift */; };
 		06E193E11EBB7B67009A1426 /* AddressSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E193E01EBB7B67009A1426 /* AddressSelectionViewController.swift */; };
 		1159A2B6A71A8478C90838A0 /* Pods_LazesnorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4370251685A324140434EB /* Pods_LazesnorTests.framework */; };
 		2AE92CF379C8F5C64BB4ABE5 /* Pods_Lazesnor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF109680E75C7B022AF8768 /* Pods_Lazesnor.framework */; };
@@ -55,6 +56,7 @@
 		06C848BC1EBC3C760066A8A0 /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRequestManager.swift; path = Managers/APIRequestManager.swift; sourceTree = "<group>"; };
 		06C848BD1EBC3C760066A8A0 /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Serializer.swift; path = Managers/Serializer.swift; sourceTree = "<group>"; };
 		06C848C01EBC446F0066A8A0 /* Bounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bounds.swift; path = Models/Bounds.swift; sourceTree = "<group>"; };
+		06C848C21EBC4FFE0066A8A0 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Step.swift; path = Models/Step.swift; sourceTree = "<group>"; };
 		06E193E01EBB7B67009A1426 /* AddressSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressSelectionViewController.swift; path = Controllers/AddressSelectionViewController.swift; sourceTree = "<group>"; };
 		141D78D836428743A3598DC1 /* Pods-LazesnorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazesnorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazesnorTests/Pods-LazesnorTests.release.xcconfig"; sourceTree = "<group>"; };
 		6AF109680E75C7B022AF8768 /* Pods_Lazesnor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lazesnor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				06C848BA1EBBF3D30066A8A0 /* Direction.swift */,
 				06C848B81EBBF3450066A8A0 /* Route.swift */,
 				06C848C01EBC446F0066A8A0 /* Bounds.swift */,
+				06C848C21EBC4FFE0066A8A0 /* Step.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				063FD4601EB256210083D7A8 /* Lazesnor.xcdatamodeld in Sources */,
 				06C848BF1EBC3C760066A8A0 /* Serializer.swift in Sources */,
 				06C848C11EBC446F0066A8A0 /* Bounds.swift in Sources */,
+				06C848C31EBC4FFE0066A8A0 /* Step.swift in Sources */,
 				06C848B91EBBF3450066A8A0 /* Route.swift in Sources */,
 				063FD4581EB256210083D7A8 /* AppDelegate.swift in Sources */,
 			);
