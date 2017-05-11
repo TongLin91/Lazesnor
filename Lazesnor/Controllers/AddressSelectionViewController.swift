@@ -139,7 +139,9 @@ extension AddressSelectionViewController: GMSAutocompleteResultsViewControllerDe
                     dump(mapView.direction)
                     
                     DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
-                        self.navigationController?.pushViewController(mapView, animated: true)
+                        self.present(mapView, animated: true, completion: { 
+                            // Disable current view's activities
+                        })
                     })
                 }
             })

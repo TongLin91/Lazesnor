@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey("AIzaSyC5PPvciXYm4F0Pvgz9--uPZncuZcM8vTo")
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = AddressSelectionViewController()
+        self.window?.rootViewController = LandingViewController()
         self.window?.makeKeyAndVisible()
         
         // Set status background color to gray
