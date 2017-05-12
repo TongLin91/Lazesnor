@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreLocation
 
 class LandingViewController: UIViewController {
 
+    var locationManager: CLLocationManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +32,14 @@ class LandingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setupLocationManager(){
+        let manager = CLLocationManager()
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.distanceFilter = 50
+        manager.requestAlwaysAuthorization()
+        manager.startUpdatingLocation()
+    }
+    
     func getDirection(sender: UIButton){
         switch sender {
         case goHomeButton:
@@ -36,7 +47,14 @@ class LandingViewController: UIViewController {
         case goWorkButton:
             print("Get work address.")
         case goSearchButton:
-            print("Go search view controller")
+            print("Go location search view controller")
+            let searchViewC = LocationSearchViewController()
+            searchViewC.locationManager = self.locationManager
+            
+            self.present(searchViewC, animated: true, completion: { 
+                //Delocate memory and location manager
+            })
+            
         default:
             print("Unknow button tapped.")
         }

@@ -16,6 +16,7 @@
 		063FD4651EB256210083D7A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063FD4631EB256210083D7A8 /* LaunchScreen.storyboard */; };
 		063FD4701EB256220083D7A8 /* LazesnorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FD46F1EB256220083D7A8 /* LazesnorTests.swift */; };
 		063FD47E1EB262D10083D7A8 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FD47D1EB262D10083D7A8 /* MainMapViewController.swift */; };
+		0670EA441EC56C9E00D8B448 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670EA431EC56C9E00D8B448 /* LocationSearchViewController.swift */; };
 		06C60C1F1EC50A7500944B91 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C60C1E1EC50A7400944B91 /* LandingViewController.swift */; };
 		06C60C241EC5132100944B91 /* SearchHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C60C221EC5132100944B91 /* SearchHistoryTableViewCell.swift */; };
 		06C60C251EC5132100944B91 /* SearchHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C60C231EC5132100944B91 /* SearchHistoryTableViewCell.xib */; };
@@ -54,6 +55,7 @@
 		063FD46F1EB256220083D7A8 /* LazesnorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazesnorTests.swift; sourceTree = "<group>"; };
 		063FD4711EB256220083D7A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		063FD47D1EB262D10083D7A8 /* MainMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainMapViewController.swift; path = Controllers/MainMapViewController.swift; sourceTree = "<group>"; };
+		0670EA431EC56C9E00D8B448 /* LocationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationSearchViewController.swift; path = Controllers/LocationSearchViewController.swift; sourceTree = "<group>"; };
 		06C60C1E1EC50A7400944B91 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingViewController.swift; path = Controllers/LandingViewController.swift; sourceTree = "<group>"; };
 		06C60C221EC5132100944B91 /* SearchHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchHistoryTableViewCell.swift; path = Views/SearchHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		06C60C231EC5132100944B91 /* SearchHistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchHistoryTableViewCell.xib; path = Views/SearchHistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -167,8 +169,9 @@
 			isa = PBXGroup;
 			children = (
 				06C60C1E1EC50A7400944B91 /* LandingViewController.swift */,
-				06E193E01EBB7B67009A1426 /* AddressSelectionViewController.swift */,
+				0670EA431EC56C9E00D8B448 /* LocationSearchViewController.swift */,
 				063FD47D1EB262D10083D7A8 /* MainMapViewController.swift */,
+				06E193E01EBB7B67009A1426 /* AddressSelectionViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 			files = (
 				063FD47E1EB262D10083D7A8 /* MainMapViewController.swift in Sources */,
 				06E193E11EBB7B67009A1426 /* AddressSelectionViewController.swift in Sources */,
+				0670EA441EC56C9E00D8B448 /* LocationSearchViewController.swift in Sources */,
 				06C60C1F1EC50A7500944B91 /* LandingViewController.swift in Sources */,
 				06C848BB1EBBF3D30066A8A0 /* Direction.swift in Sources */,
 				06C60C241EC5132100944B91 /* SearchHistoryTableViewCell.swift in Sources */,
