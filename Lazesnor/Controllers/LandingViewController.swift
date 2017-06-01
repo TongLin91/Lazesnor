@@ -11,7 +11,7 @@ import CoreLocation
 
 class LandingViewController: UIViewController {
 
-    var locationManager: CLLocationManager?
+    var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,7 @@ class LandingViewController: UIViewController {
         goWorkButton.addTarget(self, action: #selector(getDirection(sender:)), for: .touchUpInside)
         goSearchButton.addTarget(self, action: #selector(getDirection(sender:)), for: .touchUpInside)
         
+        setupLocationManager()
         setUpViewHierarchy()
         addConstraints()
     }
@@ -32,15 +33,16 @@ class LandingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setupLocationManager(){
+    func setupLocationManager() {
         let manager = CLLocationManager()
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.distanceFilter = 50
         manager.requestAlwaysAuthorization()
         manager.startUpdatingLocation()
+        self.locationManager = manager
     }
     
-    func getDirection(sender: UIButton){
+    func getDirection(sender: UIButton) {
         switch sender {
         case goHomeButton:
             print("Get home address.")
@@ -60,7 +62,7 @@ class LandingViewController: UIViewController {
         }
     }
     
-    func setUpViewHierarchy(){
+    func setUpViewHierarchy() {
         view.addSubview(tableViewTitleLabel)
         view.addSubview(historyTableView)
         view.addSubview(goSearchButton)
@@ -68,7 +70,7 @@ class LandingViewController: UIViewController {
         view.addSubview(goWorkButton)
     }
     
-    func addConstraints(){
+    func addConstraints() {
         var titleLabelConstraints = [NSLayoutConstraint]()
         titleLabelConstraints.append(tableViewTitleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20))
         titleLabelConstraints.append(tableViewTitleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor))

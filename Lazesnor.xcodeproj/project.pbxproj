@@ -15,7 +15,6 @@
 		063FD4621EB256210083D7A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 063FD4611EB256210083D7A8 /* Assets.xcassets */; };
 		063FD4651EB256210083D7A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063FD4631EB256210083D7A8 /* LaunchScreen.storyboard */; };
 		063FD4701EB256220083D7A8 /* LazesnorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FD46F1EB256220083D7A8 /* LazesnorTests.swift */; };
-		063FD47E1EB262D10083D7A8 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FD47D1EB262D10083D7A8 /* MainMapViewController.swift */; };
 		0670EA441EC56C9E00D8B448 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670EA431EC56C9E00D8B448 /* LocationSearchViewController.swift */; };
 		06C60C1F1EC50A7500944B91 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C60C1E1EC50A7400944B91 /* LandingViewController.swift */; };
 		06C60C241EC5132100944B91 /* SearchHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C60C221EC5132100944B91 /* SearchHistoryTableViewCell.swift */; };
@@ -26,7 +25,7 @@
 		06C848BF1EBC3C760066A8A0 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C848BD1EBC3C760066A8A0 /* Serializer.swift */; };
 		06C848C11EBC446F0066A8A0 /* Bounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C848C01EBC446F0066A8A0 /* Bounds.swift */; };
 		06C848C31EBC4FFE0066A8A0 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C848C21EBC4FFE0066A8A0 /* Step.swift */; };
-		06E193E11EBB7B67009A1426 /* AddressSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E193E01EBB7B67009A1426 /* AddressSelectionViewController.swift */; };
+		06D6EDE61EE0885E0054E3C0 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D6EDE51EE0885E0054E3C0 /* AlarmViewController.swift */; };
 		1159A2B6A71A8478C90838A0 /* Pods_LazesnorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4370251685A324140434EB /* Pods_LazesnorTests.framework */; };
 		2AE92CF379C8F5C64BB4ABE5 /* Pods_Lazesnor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF109680E75C7B022AF8768 /* Pods_Lazesnor.framework */; };
 /* End PBXBuildFile section */
@@ -54,7 +53,6 @@
 		063FD46B1EB256220083D7A8 /* LazesnorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazesnorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		063FD46F1EB256220083D7A8 /* LazesnorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazesnorTests.swift; sourceTree = "<group>"; };
 		063FD4711EB256220083D7A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		063FD47D1EB262D10083D7A8 /* MainMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainMapViewController.swift; path = Controllers/MainMapViewController.swift; sourceTree = "<group>"; };
 		0670EA431EC56C9E00D8B448 /* LocationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationSearchViewController.swift; path = Controllers/LocationSearchViewController.swift; sourceTree = "<group>"; };
 		06C60C1E1EC50A7400944B91 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingViewController.swift; path = Controllers/LandingViewController.swift; sourceTree = "<group>"; };
 		06C60C221EC5132100944B91 /* SearchHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchHistoryTableViewCell.swift; path = Views/SearchHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -65,7 +63,7 @@
 		06C848BD1EBC3C760066A8A0 /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Serializer.swift; path = Managers/Serializer.swift; sourceTree = "<group>"; };
 		06C848C01EBC446F0066A8A0 /* Bounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bounds.swift; path = Models/Bounds.swift; sourceTree = "<group>"; };
 		06C848C21EBC4FFE0066A8A0 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Step.swift; path = Models/Step.swift; sourceTree = "<group>"; };
-		06E193E01EBB7B67009A1426 /* AddressSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressSelectionViewController.swift; path = Controllers/AddressSelectionViewController.swift; sourceTree = "<group>"; };
+		06D6EDE51EE0885E0054E3C0 /* AlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmViewController.swift; path = Controllers/AlarmViewController.swift; sourceTree = "<group>"; };
 		141D78D836428743A3598DC1 /* Pods-LazesnorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazesnorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LazesnorTests/Pods-LazesnorTests.release.xcconfig"; sourceTree = "<group>"; };
 		6AF109680E75C7B022AF8768 /* Pods_Lazesnor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lazesnor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4370251685A324140434EB /* Pods_LazesnorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazesnorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,8 +168,7 @@
 			children = (
 				06C60C1E1EC50A7400944B91 /* LandingViewController.swift */,
 				0670EA431EC56C9E00D8B448 /* LocationSearchViewController.swift */,
-				063FD47D1EB262D10083D7A8 /* MainMapViewController.swift */,
-				06E193E01EBB7B67009A1426 /* AddressSelectionViewController.swift */,
+				06D6EDE51EE0885E0054E3C0 /* AlarmViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -425,8 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				063FD47E1EB262D10083D7A8 /* MainMapViewController.swift in Sources */,
-				06E193E11EBB7B67009A1426 /* AddressSelectionViewController.swift in Sources */,
+				06D6EDE61EE0885E0054E3C0 /* AlarmViewController.swift in Sources */,
 				0670EA441EC56C9E00D8B448 /* LocationSearchViewController.swift in Sources */,
 				06C60C1F1EC50A7500944B91 /* LandingViewController.swift in Sources */,
 				06C848BB1EBBF3D30066A8A0 /* Direction.swift in Sources */,

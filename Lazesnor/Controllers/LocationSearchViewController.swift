@@ -16,7 +16,7 @@ class LocationSearchViewController: UIViewController {
     var searchController: UISearchController?
     var resultView: UITextView?
     
-    var locationManager: CLLocationManager?
+    var locationManager: CLLocationManager!
     var apiRequestManager = APIRequestManager()
     
     override func viewDidLoad() {
@@ -24,7 +24,9 @@ class LocationSearchViewController: UIViewController {
 
         setUpViewHierarchy()
         addConstraints()
-
+        
+        self.edgesForExtendedLayout = UIRectEdge(rawValue: 0)
+        
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
         
@@ -45,7 +47,7 @@ class LocationSearchViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        guard let currentLocation = locationManager!.location else { return }
+        guard let currentLocation = locationManager.location else { return }
         
         mainMap.animate(toLocation: currentLocation.coordinate)
         mainMap.animate(toZoom: 15)
@@ -56,7 +58,25 @@ class LocationSearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getDirectionsURL(origin: String, destination: String) -> URL?{
+    func readyToSetupAlarm(_ data: Direction?) {
+        guard let validData = data else {
+            // Found nil data return from google api
+            print("Error: No direction data!!!")
+            return
+        }
+        
+        let alarmVC = AlarmViewController()
+        alarmVC.data = validData
+        alarmVC.locationManager = self.locationManager
+        alarmVC.miniMap = self.mainMap
+        
+        self.present(alarmVC, animated: true) { 
+            // delocate current view controller
+            // save location to core data
+        }
+    }
+    
+    func getDirectionsURL(origin: String, destination: String) -> URL? {
         // create URL using NSURLComponents
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
@@ -75,11 +95,11 @@ class LocationSearchViewController: UIViewController {
         return urlComponents.url
     }
     
-    func setUpViewHierarchy(){
+    func setUpViewHierarchy() {
         self.view.addSubview(mainMap)
     }
     
-    func addConstraints(){
+    func addConstraints() {
         //Constraints for mainMap
         var mainMapConstraints = [NSLayoutConstraint]()
         mainMapConstraints.append(mainMap.topAnchor.constraint(equalTo: self.view.topAnchor))
@@ -120,18 +140,18 @@ class LocationSearchViewController: UIViewController {
 // MARK: - Core Location Delegate
 extension LocationSearchViewController: CLLocationManagerDelegate{
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //current user location
-        guard let currentLocation = locations.last else { return }
-        
-        mainMap.animate(toLocation: currentLocation.coordinate)
-        mainMap.animate(toZoom: 15)
-    }
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        //current user location
+//        guard let currentLocation = locations.last else { return }
+//        
+//        mainMap.animate(toLocation: currentLocation.coordinate)
+//        mainMap.animate(toZoom: 15)
+//    }
 }
 
 // MARK: - google map delegate functions
 extension LocationSearchViewController: GMSMapViewDelegate{
-
+    // allow user to choose location by tap on map
     
 }
 
@@ -159,8 +179,7 @@ extension LocationSearchViewController: GMSAutocompleteResultsViewControllerDele
                 if let validData = data{
                     // Parsing routes
                     
-                    let direction = Direction(validData)
-                    dump(direction)
+                    self.readyToSetupAlarm(Direction(validData))
                     
                 }
             })
@@ -168,7 +187,7 @@ extension LocationSearchViewController: GMSAutocompleteResultsViewControllerDele
     }
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
-                           didFailAutocompleteWithError error: Error){
+                           didFailAutocompleteWithError error: Error) {
         // TODO: handle the error.
         print("Error: ", error.localizedDescription)
     }
