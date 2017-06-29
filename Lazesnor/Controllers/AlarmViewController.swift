@@ -36,7 +36,7 @@ class AlarmViewController: UIViewController {
     
     func addConstraints() {
         
-        //Constraints for mainMap
+        // Constraints for mainMap
         var miniMapConstraints = [NSLayoutConstraint]()
         miniMapConstraints.append(miniMap.topAnchor.constraint(equalTo: self.view.topAnchor))
         miniMapConstraints.append(miniMap.bottomAnchor.constraint(equalTo: self.view.centerYAnchor))
@@ -46,6 +46,32 @@ class AlarmViewController: UIViewController {
         
     }
     
-    
+    // Lazy inits
+    lazy var historyTableView: UITableView = {
+        let view = UITableView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.register(UINib(nibName: "SearchHistoryTableViewCell", bundle: nil) , forCellReuseIdentifier: "HistoryTableViewIdentifier")
+        view.delegate = self
+        view.dataSource = self
+        return view
+    }()
 
+}
+
+extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewIdentifier", for: indexPath) as!SearchHistoryTableViewCell
+        
+        cell.textLabel?.text = "Route " + String(indexPath.row+1)
+        
+        return cell
+    }
 }

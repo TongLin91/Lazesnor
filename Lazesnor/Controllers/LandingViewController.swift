@@ -8,10 +8,16 @@
 
 import UIKit
 import CoreLocation
+import GooglePlaces
 
 class LandingViewController: UIViewController {
 
+    var resultsViewController: GMSAutocompleteResultsViewController?
+    var searchController: UISearchController?
+    var resultView: UITextView?
+    
     var locationManager: CLLocationManager!
+    var searchBarContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +28,23 @@ class LandingViewController: UIViewController {
         goHomeButton.addTarget(self, action: #selector(getDirection(sender:)), for: .touchUpInside)
         goWorkButton.addTarget(self, action: #selector(getDirection(sender:)), for: .touchUpInside)
         goSearchButton.addTarget(self, action: #selector(getDirection(sender:)), for: .touchUpInside)
+        
+        resultsViewController = GMSAutocompleteResultsViewController()
+        resultsViewController?.delegate = self
+        
+        searchController = UISearchController(searchResultsController: resultsViewController)
+        searchController?.searchResultsUpdater = resultsViewController
+        
+        searchBarContainer = UIView(frame: CGRect(x: 0, y: 20.0, width: self.view.frame.width, height: 45.0))
+        
+        searchBarContainer.addSubview((searchController?.searchBar)!)
+        view.addSubview(searchBarContainer)
+        searchController?.searchBar.sizeToFit()
+        searchController?.hidesNavigationBarDuringPresentation = false
+        
+        // When UISearchController presents the results view, present it in
+        // this view controller, not one further up the chain.
+        definesPresentationContext = true
         
         setupLocationManager()
         setUpViewHierarchy()
@@ -72,7 +95,7 @@ class LandingViewController: UIViewController {
     
     func addConstraints() {
         var titleLabelConstraints = [NSLayoutConstraint]()
-        titleLabelConstraints.append(tableViewTitleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20))
+        titleLabelConstraints.append(tableViewTitleLabel.topAnchor.constraint(equalTo: searchBarContainer.bottomAnchor, constant: 20))
         titleLabelConstraints.append(tableViewTitleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor))
         titleLabelConstraints.append(tableViewTitleLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor))
         _ = titleLabelConstraints.map{ $0.isActive = true }
@@ -145,7 +168,7 @@ class LandingViewController: UIViewController {
     }()
     
 }
-
+// MARK: - History address table view delegate
 extension LandingViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -164,3 +187,51 @@ extension LandingViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
 }
+
+// MARK: - Google place auto complete delegate
+extension LandingViewController: GMSAutocompleteResultsViewControllerDelegate{
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+                           didAutocompleteWith place: GMSPlace) {
+        searchController?.isActive = false
+        // Do something with the selected place.
+        print("Place name: \(place.name)")
+        //        print("Place address: \(place.formattedAddress)")
+        //        print("Place attributions: \(place.attributions)")
+        
+        let origin: String
+        let destination = "\(place.coordinate.latitude),\(place.coordinate.longitude)"
+        if let currentCoor = locationManager!.location{
+            origin = "\(currentCoor.coordinate.latitude),\(currentCoor.coordinate.longitude)"
+        }else{
+            print("Location manager unable to get current location")
+            return
+        }
+        print(destination)
+//        if let validAPI = getDirectionsURL(origin: origin, destination: destination){
+//            apiRequestManager.request(endPoint: validAPI, completion: { (data: Data?) in
+//                if let validData = data{
+//                    // Parsing routes
+//                    
+//                    self.readyToSetupAlarm(Direction(validData))
+//                    
+//                }
+//            })
+//        }
+    }
+    
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+                           didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+}
+
